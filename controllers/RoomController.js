@@ -13,7 +13,12 @@ class RoomController {
     // [GET] /api/rooms/list
     list(req, res) {
         Room.find({})
-            .then(rooms => res.json(rooms))
+            .then(rooms => {
+                res.append('Access-Control-Allow-Origin', ['*'])
+                res.append('Access-Control-Allow-Methods', 'DELETE,GET,PATCH,POST,PUT')
+                res.append('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+                res.json(rooms)
+            })
             .catch(err => res.status(404).json({ error: 'Not have any room' }))
     }
 

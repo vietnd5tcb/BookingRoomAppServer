@@ -41,8 +41,8 @@ class UserController {
         const inputStr = req.params.useremail.toString()
         // User.findOne({ "useremail": req.params.useremail })
         // ? User.findOne({ "useremail": 'tna@gmail.com' })
-        User.find({ "useremail": { $req.params.useremail } })
-            // User.find({ useremail: 'tna@gmail.com' })
+        // User.find({ "useremail": { $req.params.useremail } })
+        User.find({ useremail: 'tna@gmail.com' })
             .then(user => {
                 if (user) {
                     res.json(user)
