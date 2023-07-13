@@ -40,6 +40,13 @@ class UserController {
 
     createUser(req, res) {
 
+        // please follow below user model        
+        // username: String,
+        // useremail: String,
+        // password: String,
+        // mssv: Number,
+
+
         res.setHeader('Content-Type', 'application/json');
         res.append('Access-Control-Allow-Origin', ['*'])
         res.append('Access-Control-Allow-Methods', 'DELETE,GET,PATCH,POST,PUT')
