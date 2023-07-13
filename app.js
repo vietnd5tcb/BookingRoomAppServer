@@ -66,6 +66,7 @@ app.get('/', (req, res) => res.send('Hello World!'))
 // app.get('/api/rooms/list', (req, res) => res.send(rooms))
 
 // Routes init
+app.use(bodyParser.json())
 route(app);
 
 
@@ -73,7 +74,7 @@ route(app);
 
 
 
-app.use(bodyParser.json())
+
 app.post('/api/rooms/add', (req, res) => {
     console.log(req.body)
     res.setHeader('X-Powered-By', 'Node.js')

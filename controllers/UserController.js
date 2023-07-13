@@ -15,27 +15,10 @@
 //     }
 // ]
 
-const { query } = require('express')
+
 const User = require('../models/UserModel')
 
 class UserController {
-
-    // [GET] /api/user/get/:email 
-    // getUserByEmail(req, res) {
-    //     const user = users.find(users => users.useremail == req.params.useremail)
-    //     if (!user) {
-    //         res.status(404).send('User khong ton tai ')
-    //     }
-    //     res.send(user)
-    // }
-
-    // getId(req, res) {
-    //     Room.findById(req.params.id)
-    //         .then(room => res.json(room))
-    //         .catch(err => res.status(404).json({ error: 'Room not found' }))
-
-    // }
-
     getUserByEmail(req, res) {
         const userEmailValue = req.params.useremail
 
@@ -53,15 +36,27 @@ class UserController {
             .catch(err => res.status(500).json({ error: 'Backend Error' }))
     }
 
+
+
     createUser(req, res) {
+
         res.setHeader('Content-Type', 'application/json');
+        res.append('Access-Control-Allow-Origin', ['*'])
+        res.append('Access-Control-Allow-Methods', 'DELETE,GET,PATCH,POST,PUT')
+        res.append('Access-Control-Allow-Headers', 'Content-Type,Authorization')
 
-        const user = {
-            username: req.body.username
+        const user = new User(req.body)
 
-        }
-        res.json(req.body)
-
+        user.save()
+            .then(() => {
+                res.json({
+                    success: "true",
+                    notice: "Add thanh cong",
+                })
+            })
+            .catch(error => {
+                res.status(500).json({ error: 'Backend Error' })
+            })
     }
 
 
@@ -82,15 +77,6 @@ class UserController {
     //         data: rooms
     //     }))
     // })
-
-
-    list(req, res) {
-        // res.send(users)
-
-        res.json({
-            name: 'test'
-        })
-    }
 
 }
 
