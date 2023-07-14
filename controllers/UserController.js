@@ -19,18 +19,27 @@
 const User = require('../models/UserModel')
 
 class UserController {
-    getUserByEmail(req, res) {
-        const userEmailValue = req.params.useremail
 
-        User.find({ useremail: userEmailValue }).exec()
-            .then(user => {
-                if (user != null) {
-                    res.append('Access-Control-Allow-Origin', ['*'])
-                    res.append('Access-Control-Allow-Methods', 'DELETE,GET,PATCH,POST,PUT')
-                    res.append('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-                    res.json(user)
+    getUserByEmail(req, res) {
+        res.append('Access-Control-Allow-Origin', ['*'])
+        res.append('Access-Control-Allow-Methods', 'DELETE,GET,PATCH,POST,PUT')
+        res.append('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+
+        const userEmailValue = req.params.useremail
+        User.find({})
+            .then(listUser => {
+                const checkUser = listUser.find(index => index.useremail == userEmailValue)
+                if (checkUser) {
+                    res.json({
+                        success: "true",
+                        user: checkUser
+                    })
+                    return
                 } else {
-                    res.json({ error: 'User ${inputStr} not found ' + inputStr })
+                    res.json({
+                        success: "false",
+                        error: 'User not found'
+                    })
                 }
             })
             .catch(err => res.status(500).json({ error: 'Backend Error' }))
@@ -45,8 +54,6 @@ class UserController {
         // useremail: String,
         // password: String,
         // mssv: Number,
-
-
         res.setHeader('Content-Type', 'application/json');
         res.append('Access-Control-Allow-Origin', ['*'])
         res.append('Access-Control-Allow-Methods', 'DELETE,GET,PATCH,POST,PUT')
@@ -54,36 +61,35 @@ class UserController {
 
         const user = new User(req.body)
 
-        user.save()
-            .then(() => {
-                res.json({
-                    success: "true",
-                    notice: "Add thanh cong",
-                })
+        if (!user.username || !user.useremail || !user.password) {
+            return res.status(200).json({
+                success: "false",
+                notice: "Khong nhap du thong tin bat buoc"
+            })
+        }
+
+        User.find({})
+            .then(listUser => {
+                const checkUser = listUser.find(index => index.useremail == user.useremail)
+                if (checkUser) {
+                    return res.status(200).json({
+                        success: "false",
+                        notice: "Email da ton tai"
+                    })
+                } else {
+                    user.save()
+                        .then(() => {
+                            res.json({
+                                success: "true",
+                                notice: "Add thanh cong",
+                            })
+                        })
+                }
             })
             .catch(error => {
                 res.status(500).json({ error: 'Backend Error' })
             })
     }
-
-
-    // app.post('/api/rooms/add', (req, res) => {
-    //     console.log(req.body)
-    //     res.setHeader('X-Powered-By', 'Node.js')
-
-    //     const room = {
-    //         id: req.body.id,
-    //         name: req.body.name
-    //     }
-    //     rooms.push(room)
-
-    //     res.setHeader('Content-Type', 'application/json');
-    //     res.send(JSON.stringify({
-    //         success: "true",
-    //         notice: "Add thanh cong",
-    //         data: rooms
-    //     }))
-    // })
 
 }
 

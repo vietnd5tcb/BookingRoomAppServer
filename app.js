@@ -50,17 +50,6 @@ const database = require('./config/database')
 
 database.connect()
 
-const rooms = [
-    {
-        id: 1,
-        name: '924'
-    },
-    {
-        id: 2,
-        name: '303'
-    }
-]
-
 app.get('/', (req, res) => res.send('Hello World!'))
 
 // app.get('/api/rooms/list', (req, res) => res.send(rooms))

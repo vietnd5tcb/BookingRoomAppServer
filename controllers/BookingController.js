@@ -1,41 +1,41 @@
-const Room = require('../models/RoomModel')
+const Booking = require('../models/BookingModel')
 
-class RoomController {
+class BookingController {
 
-    // [GET] /api/rooms/get/:id
+    // [GET] /api/bookings/get/:id
     getId(req, res) {
         res.append('Access-Control-Allow-Origin', ['*'])
         res.append('Access-Control-Allow-Methods', 'DELETE,GET,PATCH,POST,PUT')
         res.append('Access-Control-Allow-Headers', 'Content-Type,Authorization')
 
-        Room.findById(req.params.id)
-            .then(room => {
+        Booking.findById(req.params.id)
+            .then(booking => {
                 res.json(
                     {
                         success: "true",
-                        data: room
+                        data: booking
                     })
             })
-            .catch(err => res.status(200).json({ success: "false", error: 'Room not found' }))
+            .catch(err => res.status(200).json({ success: "false", error: 'Booking not found' }))
 
     }
 
-    // [GET] /api/rooms/list
+    // [GET] /api/bookings/list 
     list(req, res) {
         res.append('Access-Control-Allow-Origin', ['*'])
         res.append('Access-Control-Allow-Methods', 'DELETE,GET,PATCH,POST,PUT')
         res.append('Access-Control-Allow-Headers', 'Content-Type,Authorization')
 
-        Room.find({})
-            .then(rooms => {
+        Booking.find({})
+            .then(bookings => {
                 res.json({
                     success: "true",
-                    data: rooms
+                    data: bookings
                 })
             })
-            .catch(err => res.status(200).json({ error: 'Not have any room' }))
+            .catch(err => res.status(200).json({ error: 'Not have any booking' }))
     }
 
 }
 
-module.exports = new RoomController;
+module.exports = new BookingController;
