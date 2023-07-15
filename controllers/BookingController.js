@@ -70,26 +70,28 @@ class BookingController {
             .then(listBookingOfRoom => {
                 if (listBookingOfRoom[0]) {
                     for (var i = 0; i < listBookingOfRoom.length; i++) {
-                        if (booking.startTime >= listBookingOfRoom[i].startTime
-                            &&
-                            booking.startTime <= listBookingOfRoom[i].endTime
-                        ) {
+                        if (booking.startTime >= listBookingOfRoom[i].startTime && booking.startTime <= listBookingOfRoom[i].endTime) {
                             console.log("Phong da co nguoi dat")
                             return res.status(200).json({
                                 success: "false",
                                 notice: "Phong da co nguoi dat"
                             })
                         }
-                        if (booking.endTime >= listBookingOfRoom[i].startTime
-                            &&
-                            booking.endTime <= listBookingOfRoom[i].endTime
-                        ) {
+                        if (booking.endTime >= listBookingOfRoom[i].startTime && booking.endTime <= listBookingOfRoom[i].endTime) {
                             return res.status(200).json({
                                 success: "false",
                                 notice: "Phong da co nguoi dat"
                             })
                         }
                     }
+                    return booking.save().then(() => {
+                        res.status(200).json({
+                            success: "true",
+                            notice: "Booking thanh cong"
+                        })
+                    })
+
+                } else {
                     return booking.save().then(() => {
                         res.status(200).json({
                             success: "true",
