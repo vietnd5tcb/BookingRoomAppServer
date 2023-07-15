@@ -1,3 +1,5 @@
+const { response } = require("express")
+
 npm i
 npm start
 
@@ -29,6 +31,22 @@ response : {
         "password": "password",
         "mssv": 20202024,
         "createAt": "2023-07-15T08:45:35.645Z"
+    }
+}
+
+get user by id : HTTP GET http://127.0.0.1:3000/api/users/getId/?ID
+
+response : {
+    {
+        "success": "true",
+        "data": {
+            "_id": "64b1926b22ea5e4ca03096a0",
+            "username": "Nguyen Dac Viet1234",
+            "useremail": "vietnd5@techcombank.com.vn",
+            "password": "tna250102",
+            "createAt": "2023-07-14T18:22:35.247Z",
+            "__v": 0
+        }
     }
 }
 

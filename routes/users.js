@@ -5,6 +5,7 @@ const userController = require('../controllers/UserController')
 
 // roomController.index
 router.get('/get/:useremail', userController.getUserByEmail)
+router.get('/getId/:id', userController.getUserById)
 router.post('/create/', userController.createUser)
 
 

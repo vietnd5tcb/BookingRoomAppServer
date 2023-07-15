@@ -46,6 +46,29 @@ class UserController {
     }
 
 
+    getUserById(req, res) {
+        res.append('Access-Control-Allow-Origin', ['*'])
+        res.append('Access-Control-Allow-Methods', 'DELETE,GET,PATCH,POST,PUT')
+        res.append('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+
+        User.findById(req.params.id).then(user => {
+            if (user) {
+                res.status(200).json({
+                    success: "true",
+                    data: user
+                })
+                return
+            } else {
+                return res.status(200).json({
+                    success: "false",
+                    error: 'User not found'
+                })
+            }
+        }).catch(err => res.status(200).json({
+            success: "false",
+            error: 'User not found'
+        }))
+    }
 
     createUser(req, res) {
 
