@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "64a169002b9b59b25a85cbb2"
+  },
+  "username": "Tran Nguyet Anh",
+  "useremail": "tna@gmail.com",
+  "password": "password",
+  "mssv": "20202024"
+},{
+  "_id": {
+    "$oid": "64b1926b22ea5e4ca03096a0"
+  },
+  "username": "Nguyen Dac Viet1234",
+  "useremail": "vietnd5@techcombank.com.vn",
+  "password": "tna250102",
+  "createAt": {
+    "$date": "2023-07-14T18:22:35.247Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64b19635303f5001c5d32d07"
+  },
+  "username": "Nguyen Dac Viet1234",
+  "useremail": "vietnd5@techcombank.com.v1n",
+  "password": "tna250102",
+  "createAt": {
+    "$date": "2023-07-14T18:38:45.591Z"
+  },
+  "__v": 0
+}]
