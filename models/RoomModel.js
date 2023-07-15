@@ -6,6 +6,7 @@ const ObjectId = Schema.ObjectId;
 const Room = new Schema({
     id: ObjectId,
     name: String,
+    image: String
 });
 
 
