@@ -116,7 +116,10 @@ class BookingController {
                     data: bookings
                 })
             })
-            .catch(err => res.status(200).json({ error: 'Not have any booking' }))
+            .catch(err => res.status(200).json({
+                success: "false",
+                notice: 'Not have any booking'
+            }))
     }
 
 }
