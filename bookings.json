@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "64b247c25359f0da85e3a96c"
+  },
+  "createBy": {
+    "$oid": "64a169002b9b59b25a85cbb2"
+  },
+  "room": {
+    "$oid": "64a045d7aa8cca604bffeb1b"
+  },
+  "startTime": {
+    "$date": "2023-07-14T04:00:00.247Z"
+  },
+  "endTime": {
+    "$date": "2023-07-14T04:30:45.591Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64b259c3ad8595fb11f3414e"
+  },
+  "createBy": {
+    "$oid": "64a169002b9b59b25a85cbb2"
+  },
+  "room": {
+    "$oid": "64a045d7aa8cca604bffeb1b"
+  },
+  "startTime": {
+    "$date": "2023-07-14T03:28:45.000Z"
+  },
+  "endTime": {
+    "$date": "2023-07-14T03:38:45.000Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64b25bce5d8b7fb8021bc403"
+  },
+  "createBy": {
+    "$oid": "64a169002b9b59b25a85cbb2"
+  },
+  "room": {
+    "$oid": "64a045d7aa8cca604bffeb1b"
+  },
+  "startTime": {
+    "$date": "2023-07-14T05:28:45.000Z"
+  },
+  "endTime": {
+    "$date": "2023-07-14T05:38:45.000Z"
+  },
+  "__v": 0
+}]

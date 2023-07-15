@@ -3,6 +3,28 @@ npm start
 
 
 create user : HTTP POST http://127.0.0.1:3000/api/users/create
+payload : {
+    "username" : "Nguyen Dac Viet1234",
+    "useremail" : "vietnd5@techcombank.com.v1n",
+    "password" : "tna250102",
+    "mssv" : 20202024
+}
+
 get user by email : HTTP GET http://127.0.0.1:3000/api/users/get/?useremail
+
 list room : HTTP GET http://localhost:3000/api/rooms/list
+
 get room by id : HTTP GET http://localhost:3000/api/rooms/get/?id
+
+get booking by id : HTTP GET http://127.0.0.1:3000/api/bookings/get/?id
+
+create booking : HTTP POST http://127.0.0.1:3000/api/bookings/create/
+payload : {
+    "createBy" : "64a169002b9b59b25a85cbb2",
+    "room" : "64a045d7aa8cca604bffeb1b",
+    "startTime": "2023-07-14T10:28:45",
+    "endTime": "2023-07-14T10:38:45"
+}
+
+get list booking : HTTP GET http://127.0.0.1:3000/api/bookings/list
+
