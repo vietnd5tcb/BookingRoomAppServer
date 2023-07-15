@@ -17,7 +17,7 @@
   "__v": 0
 },{
   "_id": {
-    "$oid": "64b259c3ad8595fb11f3414e"
+    "$oid": "64b25cfd0ef4f7c75d7c08af"
   },
   "createBy": {
     "$oid": "64a169002b9b59b25a85cbb2"
@@ -26,15 +26,17 @@
     "$oid": "64a045d7aa8cca604bffeb1b"
   },
   "startTime": {
-    "$date": "2023-07-14T03:28:45.000Z"
+    "$date": "2023-07-14T06:28:45.000Z"
   },
   "endTime": {
-    "$date": "2023-07-14T03:38:45.000Z"
+    "$date": "2023-07-14T06:38:45.000Z"
   },
-  "__v": 0
+  "__v": 0,
+  "roomName": "Room 924",
+  "userName": "Tran Nguyet Anh"
 },{
   "_id": {
-    "$oid": "64b25bce5d8b7fb8021bc403"
+    "$oid": "64b2882934e766adf459ca8d"
   },
   "createBy": {
     "$oid": "64a169002b9b59b25a85cbb2"
@@ -43,10 +45,50 @@
     "$oid": "64a045d7aa8cca604bffeb1b"
   },
   "startTime": {
-    "$date": "2023-07-14T05:28:45.000Z"
+    "$date": "2023-07-14T07:28:45.000Z"
   },
   "endTime": {
-    "$date": "2023-07-14T05:38:45.000Z"
+    "$date": "2023-07-14T07:38:45.000Z"
   },
-  "__v": 0
+  "__v": 0,
+  "roomName": "Room 924",
+  "userName": "Tran Nguyet Anh"
+},{
+  "_id": {
+    "$oid": "64b28c3d949f9dfa73a1ab93"
+  },
+  "createBy": {
+    "$oid": "64a169002b9b59b25a85cbb2"
+  },
+  "room": {
+    "$oid": "64a045d7aa8cca604bffeb1b"
+  },
+  "startTime": {
+    "$date": "2023-07-14T14:28:45.000Z"
+  },
+  "endTime": {
+    "$date": "2023-07-14T14:38:45.000Z"
+  },
+  "__v": 0,
+  "roomName": "Room 924",
+  "userName": "Tran Nguyet Anh"
+},{
+  "_id": {
+    "$oid": "64b29202f886efa7246c223a"
+  },
+  "createBy": {
+    "$oid": "64a169002b9b59b25a85cbb2"
+  },
+  "room": {
+    "$oid": "64a045d7aa8cca604bffeb1b"
+  },
+  "startTime": {
+    "$date": "2023-07-14T14:48:45.000Z"
+  },
+  "endTime": {
+    "$date": "2023-07-14T14:58:45.000Z"
+  },
+  "__v": 0,
+  "roomName": "Room 924",
+  "userName": "Tran Nguyet Anh"
 }]

@@ -28,4 +28,28 @@
     "$date": "2023-07-14T18:38:45.591Z"
   },
   "__v": 0
+},{
+  "_id": {
+    "$oid": "64b2a11231cf4d51d03bda45"
+  },
+  "username": "vietnd",
+  "useremail": "nguyenviet4664@gmail.com",
+  "password": "pass",
+  "mssv": 20165694,
+  "createAt": {
+    "$date": "2023-07-15T13:37:22.039Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64b2a3df31cf4d51d03bda58"
+  },
+  "username": "vietnd6@techcombank.com.vn",
+  "useremail": "vietnd6@techcombank.com.vn",
+  "password": "tna250102",
+  "mssv": 11231231,
+  "createAt": {
+    "$date": "2023-07-15T13:49:19.570Z"
+  },
+  "__v": 0
 }]
