@@ -56,6 +56,7 @@ app.get('/', (req, res) => res.send('Hello World!'))
 
 // Routes init
 app.use(bodyParser.json())
+app.use(express.urlencoded())
 route(app);
 
 
