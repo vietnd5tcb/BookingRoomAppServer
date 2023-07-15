@@ -62,6 +62,7 @@ class UserController {
         const user = new User(req.body)
 
         if (!user.username || !user.useremail || !user.password) {
+            console.log(user)
             return res.status(200).json({
                 success: "false",
                 notice: "Khong nhap du thong tin bat buoc"

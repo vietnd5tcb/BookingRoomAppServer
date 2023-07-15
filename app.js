@@ -64,62 +64,62 @@ route(app);
 
 
 
-app.post('/api/rooms/add', (req, res) => {
-    console.log(req.body)
-    res.setHeader('X-Powered-By', 'Node.js')
+// app.post('/api/rooms/add', (req, res) => {
+//     console.log(req.body)
+//     res.setHeader('X-Powered-By', 'Node.js')
 
-    const room = {
-        id: req.body.id,
-        name: req.body.name
-    }
-    rooms.push(room)
+//     const room = {
+//         id: req.body.id,
+//         name: req.body.name
+//     }
+//     rooms.push(room)
 
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({
-        success: "true",
-        notice: "Add thanh cong",
-        data: rooms
-    }))
-})
+//     res.setHeader('Content-Type', 'application/json');
+//     res.send(JSON.stringify({
+//         success: "true",
+//         notice: "Add thanh cong",
+//         data: rooms
+//     }))
+// })
 
-//  
+// //  
 
-app.put('/api/rooms/update/:id', (req, res) => {
-    const room = rooms.find(rooms => rooms.id === parseInt(req.params.id))
-    if (!room) {
-        res.status(404).send("Id khong ton tai")
-    }
-    room.name = req.body.name
-    // room.name = "2";
-
-
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({
-        success: "true",
-        notice: "Add thanh cong",
-        data: rooms
-    }))
-})
+// app.put('/api/rooms/update/:id', (req, res) => {
+//     const room = rooms.find(rooms => rooms.id === parseInt(req.params.id))
+//     if (!room) {
+//         res.status(404).send("Id khong ton tai")
+//     }
+//     room.name = req.body.name
+//     // room.name = "2";
 
 
-app.delete('/api/rooms/delete/:id', (req, res) => {
-    const room = rooms.find(rooms => rooms.id === parseInt(req.params.id))
-    if (!room) {
-        res.status(404).send('Rooms khong ton tai ')
-    }
-    if (room) {
-        let index = rooms.indexOf(room)
-        rooms.splice(index, 1)
-    }
+//     res.setHeader('Content-Type', 'application/json');
+//     res.send(JSON.stringify({
+//         success: "true",
+//         notice: "Add thanh cong",
+//         data: rooms
+//     }))
+// })
 
-    res.setHeader('Content-Type', 'application/json')
-    res.send(JSON.stringify({
-        success: "true",
-        notice: "Delete thanh cong",
-        data: rooms
-    }))
 
-})
+// app.delete('/api/rooms/delete/:id', (req, res) => {
+//     const room = rooms.find(rooms => rooms.id === parseInt(req.params.id))
+//     if (!room) {
+//         res.status(404).send('Rooms khong ton tai ')
+//     }
+//     if (room) {
+//         let index = rooms.indexOf(room)
+//         rooms.splice(index, 1)
+//     }
+
+//     res.setHeader('Content-Type', 'application/json')
+//     res.send(JSON.stringify({
+//         success: "true",
+//         notice: "Delete thanh cong",
+//         data: rooms
+//     }))
+
+// })
 
 app.listen(port, () => console.log(`App listening on port ${port}!`))
 
