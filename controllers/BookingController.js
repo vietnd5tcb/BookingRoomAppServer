@@ -38,6 +38,7 @@ class BookingController {
         res.setHeader('Content-Type', 'application/json');
 
         const booking = new Booking(req.body)
+        console.log(booking)
 
         if (!booking.createBy || !booking.createBy || !booking.room) {
             return res.status(200).json({

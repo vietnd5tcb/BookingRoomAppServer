@@ -8,7 +8,8 @@ const Booking = new Schema({
     createBy: ObjectId,
     room: ObjectId,
     startTime: Date,
-    endTime: Date
+    endTime: Date,
+    description: String
 });
 
 
